@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c6fa5ef0750fa6919de0b72c492e99e2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+     <div style="position: fixed; 
+                 bottom: 50px; left: 50px; width: 250px; height: 150px; 
+                 background-color: white; border:2px solid grey; z-index:9999; font-size:14px;">
+     &nbsp; <b>Vlucht Legenda</b><br>
+     &nbsp; <i style="background:blue;color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</i> Vlucht 1<br>
+     &nbsp; <i style="background:red;color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</i> Vlucht 2<br>
+     &nbsp; <i style="background:green;color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</i> Vlucht 3<br>
+     &nbsp; <i style="background:purple;color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</i> Vlucht 4<br>
+     &nbsp; <i style="background:orange;color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</i> Vlucht 5<br>
+     &nbsp; <i style="background:darkred;color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</i> Vlucht 6<br>
+     &nbsp; <i style="background:cadetblue;color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</i> Vlucht 7<br>
+     </div>
+     
+    
+            <div class="folium-map" id="map_c6fa5ef0750fa6919de0b72c492e99e2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c6fa5ef0750fa6919de0b72c492e99e2 = L.map(
+                "map_c6fa5ef0750fa6919de0b72c492e99e2",
+                {
+                    center: [52.0, 5.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d3b67e2eb63971ee13b5dff58ddb7f76 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d3b67e2eb63971ee13b5dff58ddb7f76.addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var marker_96f0fc89557e7a67b05b9f3ffab3febd = L.marker(
+                [52.303928, 4.765694],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_69600814fc42a40a72b455e2b62f1a72 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_96f0fc89557e7a67b05b9f3ffab3febd.setIcon(icon_69600814fc42a40a72b455e2b62f1a72);
+        
+    
+        var popup_416a443c6a9db19ad532309b926b64c9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_213e961eab31a5250dbde851218a648c = $(`<div id="html_213e961eab31a5250dbde851218a648c" style="width: 100.0%; height: 100.0%;">Vlucht 1 Start</div>`)[0];
+                popup_416a443c6a9db19ad532309b926b64c9.setContent(html_213e961eab31a5250dbde851218a648c);
+            
+        
+
+        marker_96f0fc89557e7a67b05b9f3ffab3febd.bindPopup(popup_416a443c6a9db19ad532309b926b64c9)
+        ;
+
+        
+    
+    
+            var marker_ccbce117f8f037be25518b73c2342898 = L.marker(
+                [41.30246, 2.078164],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_48147d299c3b9b6328868550fb5083b1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ccbce117f8f037be25518b73c2342898.setIcon(icon_48147d299c3b9b6328868550fb5083b1);
+        
+    
+        var popup_d9b99e9bb84f9705ed938417c9f28348 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bb1e78cd2a30779d16efec2483980cfb = $(`<div id="html_bb1e78cd2a30779d16efec2483980cfb" style="width: 100.0%; height: 100.0%;">Vlucht 1 Eind</div>`)[0];
+                popup_d9b99e9bb84f9705ed938417c9f28348.setContent(html_bb1e78cd2a30779d16efec2483980cfb);
+            
+        
+
+        marker_ccbce117f8f037be25518b73c2342898.bindPopup(popup_d9b99e9bb84f9705ed938417c9f28348)
+        ;
+
+        
+    
+    
+            var poly_line_94848d9c3cd6089a0523a4c888a242e6 = L.polyline(
+                [[52.303928, 4.765694], [41.30246, 2.078164]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var marker_3f8fdeee15482ab0f9de07fef8925663 = L.marker(
+                [46.803194000000005, 3.421929],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var div_icon_3c0b0f0b0586aa44ae19954efd2d25fc = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px;\u0027\u003eAfstand: 1240.06 km\u003c/div\u003e"});
+            marker_3f8fdeee15482ab0f9de07fef8925663.setIcon(div_icon_3c0b0f0b0586aa44ae19954efd2d25fc);
+        
+    
+        var popup_52faf9bbfcf4086aeface49dd77a8b32 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1fece5851d4f3f099b8cf24420ecade7 = $(`<div id="html_1fece5851d4f3f099b8cf24420ecade7" style="width: 100.0%; height: 100.0%;">Vlucht 1 afstand: 1240.06 km, Azimut: 190.49 graden</div>`)[0];
+                popup_52faf9bbfcf4086aeface49dd77a8b32.setContent(html_1fece5851d4f3f099b8cf24420ecade7);
+            
+        
+
+        marker_3f8fdeee15482ab0f9de07fef8925663.bindPopup(popup_52faf9bbfcf4086aeface49dd77a8b32)
+        ;
+
+        
+    
+    
+            var marker_bb0dc64aa27197ad134cdb3754c4dd35 = L.marker(
+                [52.303879, 4.76739],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_c91be22be8e450a1844dd0e2beb82056 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_bb0dc64aa27197ad134cdb3754c4dd35.setIcon(icon_c91be22be8e450a1844dd0e2beb82056);
+        
+    
+        var popup_1a22633ffacf1234012f7ffd63d1915c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d83dc0551d97ae34032cb826725f95d6 = $(`<div id="html_d83dc0551d97ae34032cb826725f95d6" style="width: 100.0%; height: 100.0%;">Vlucht 2 Start</div>`)[0];
+                popup_1a22633ffacf1234012f7ffd63d1915c.setContent(html_d83dc0551d97ae34032cb826725f95d6);
+            
+        
+
+        marker_bb0dc64aa27197ad134cdb3754c4dd35.bindPopup(popup_1a22633ffacf1234012f7ffd63d1915c)
+        ;
+
+        
+    
+    
+            var marker_04fe01bb7c5e8db27008a2223a668629 = L.marker(
+                [41.301945, 2.078872],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_a6c42d91981b5dfcf44933af501e67b9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_04fe01bb7c5e8db27008a2223a668629.setIcon(icon_a6c42d91981b5dfcf44933af501e67b9);
+        
+    
+        var popup_fa203575d8b44dee8d849e346439fbd9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_91bf2bd21690a419afab392076980e00 = $(`<div id="html_91bf2bd21690a419afab392076980e00" style="width: 100.0%; height: 100.0%;">Vlucht 2 Eind</div>`)[0];
+                popup_fa203575d8b44dee8d849e346439fbd9.setContent(html_91bf2bd21690a419afab392076980e00);
+            
+        
+
+        marker_04fe01bb7c5e8db27008a2223a668629.bindPopup(popup_fa203575d8b44dee8d849e346439fbd9)
+        ;
+
+        
+    
+    
+            var poly_line_39ec4ae22f200a36e69115c454e43f9b = L.polyline(
+                [[52.303879, 4.76739], [41.301945, 2.078872]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var marker_02fecd9644c4229a1263a1c456614f36 = L.marker(
+                [46.802912000000006, 3.4231309999999997],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var div_icon_db4288b70852720fd99d217527f5cee3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px;\u0027\u003eAfstand: 1240.13 km\u003c/div\u003e"});
+            marker_02fecd9644c4229a1263a1c456614f36.setIcon(div_icon_db4288b70852720fd99d217527f5cee3);
+        
+    
+        var popup_9f46ca61b9ec5bc63d9e4fb120fb5715 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6356c6920980e60c40b39f598cd14f08 = $(`<div id="html_6356c6920980e60c40b39f598cd14f08" style="width: 100.0%; height: 100.0%;">Vlucht 2 afstand: 1240.13 km, Azimut: 190.50 graden</div>`)[0];
+                popup_9f46ca61b9ec5bc63d9e4fb120fb5715.setContent(html_6356c6920980e60c40b39f598cd14f08);
+            
+        
+
+        marker_02fecd9644c4229a1263a1c456614f36.bindPopup(popup_9f46ca61b9ec5bc63d9e4fb120fb5715)
+        ;
+
+        
+    
+    
+            var marker_e1b8bc5f61e160e00823c3830aa1030a = L.marker(
+                [52.281525, 4.799523],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_39df262e393e7d8d53f1269c7d473059 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e1b8bc5f61e160e00823c3830aa1030a.setIcon(icon_39df262e393e7d8d53f1269c7d473059);
+        
+    
+        var popup_8b49b9b5015c61dc5bca6da0c23d2996 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2337b62e180a21995d4334eb541ce60d = $(`<div id="html_2337b62e180a21995d4334eb541ce60d" style="width: 100.0%; height: 100.0%;">Vlucht 3 Start</div>`)[0];
+                popup_8b49b9b5015c61dc5bca6da0c23d2996.setContent(html_2337b62e180a21995d4334eb541ce60d);
+            
+        
+
+        marker_e1b8bc5f61e160e00823c3830aa1030a.bindPopup(popup_8b49b9b5015c61dc5bca6da0c23d2996)
+        ;
+
+        
+    
+    
+            var marker_028d01c760073baa09c7b311dca21c59 = L.marker(
+                [41.301086, 2.074731],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_4117716e55d92ed0343784c7e72ee7bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_028d01c760073baa09c7b311dca21c59.setIcon(icon_4117716e55d92ed0343784c7e72ee7bc);
+        
+    
+        var popup_7c6b0d1f35cef2cd76f69fdfeb1c8f7f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0e4c3126a91226864fe17842b648d270 = $(`<div id="html_0e4c3126a91226864fe17842b648d270" style="width: 100.0%; height: 100.0%;">Vlucht 3 Eind</div>`)[0];
+                popup_7c6b0d1f35cef2cd76f69fdfeb1c8f7f.setContent(html_0e4c3126a91226864fe17842b648d270);
+            
+        
+
+        marker_028d01c760073baa09c7b311dca21c59.bindPopup(popup_7c6b0d1f35cef2cd76f69fdfeb1c8f7f)
+        ;
+
+        
+    
+    
+            var poly_line_adbac13837e9ce7be8e6226cc1dc2a5e = L.polyline(
+                [[52.281525, 4.799523], [41.301086, 2.074731]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var marker_101739f5c75715842cb2b1d525e83518 = L.marker(
+                [46.7913055, 3.437127],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var div_icon_76d43fa1e2332173c1efbaee62d591a7 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px;\u0027\u003eAfstand: 1238.23 km\u003c/div\u003e"});
+            marker_101739f5c75715842cb2b1d525e83518.setIcon(div_icon_76d43fa1e2332173c1efbaee62d591a7);
+        
+    
+        var popup_5a3a773b7272094dda020eabc985df47 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e223c3fc0d2ed184749869dbbd79a1a6 = $(`<div id="html_e223c3fc0d2ed184749869dbbd79a1a6" style="width: 100.0%; height: 100.0%;">Vlucht 3 afstand: 1238.23 km, Azimut: 190.66 graden</div>`)[0];
+                popup_5a3a773b7272094dda020eabc985df47.setContent(html_e223c3fc0d2ed184749869dbbd79a1a6);
+            
+        
+
+        marker_101739f5c75715842cb2b1d525e83518.bindPopup(popup_5a3a773b7272094dda020eabc985df47)
+        ;
+
+        
+    
+    
+            var marker_c01d865fd19a5779b3b417164cd0cc71 = L.marker(
+                [52.306252, 4.767988],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_359d2ff1aa8f4c686b276401b8f59345 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_c01d865fd19a5779b3b417164cd0cc71.setIcon(icon_359d2ff1aa8f4c686b276401b8f59345);
+        
+    
+        var popup_fd733da5cad0b6dc33bf9ceb4a4284ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_389e92fd86590a4e519cce4bef59facc = $(`<div id="html_389e92fd86590a4e519cce4bef59facc" style="width: 100.0%; height: 100.0%;">Vlucht 4 Start</div>`)[0];
+                popup_fd733da5cad0b6dc33bf9ceb4a4284ee.setContent(html_389e92fd86590a4e519cce4bef59facc);
+            
+        
+
+        marker_c01d865fd19a5779b3b417164cd0cc71.bindPopup(popup_fd733da5cad0b6dc33bf9ceb4a4284ee)
+        ;
+
+        
+    
+    
+            var marker_ff25edc7c8e3334d1a118679f299c68f = L.marker(
+                [41.301624, 2.076641],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_a262d2fa699bc569f30840beddb48938 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_ff25edc7c8e3334d1a118679f299c68f.setIcon(icon_a262d2fa699bc569f30840beddb48938);
+        
+    
+        var popup_5d9fc7fbd544e6cf8553d4fad3d05e9c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b43d3375a95a460350487d08af1d09f3 = $(`<div id="html_b43d3375a95a460350487d08af1d09f3" style="width: 100.0%; height: 100.0%;">Vlucht 4 Eind</div>`)[0];
+                popup_5d9fc7fbd544e6cf8553d4fad3d05e9c.setContent(html_b43d3375a95a460350487d08af1d09f3);
+            
+        
+
+        marker_ff25edc7c8e3334d1a118679f299c68f.bindPopup(popup_5d9fc7fbd544e6cf8553d4fad3d05e9c)
+        ;
+
+        
+    
+    
+            var poly_line_27240dcb203cbb7e51fce6917e13e7de = L.polyline(
+                [[52.306252, 4.767988], [41.301624, 2.076641]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var marker_54fadc2ee56501c5f6de4fe49fdd1b55 = L.marker(
+                [46.803938, 3.4223144999999997],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var div_icon_a344826d0d59ecf5b8bcf3f99d9c0fa6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px;\u0027\u003eAfstand: 1240.46 km\u003c/div\u003e"});
+            marker_54fadc2ee56501c5f6de4fe49fdd1b55.setIcon(div_icon_a344826d0d59ecf5b8bcf3f99d9c0fa6);
+        
+    
+        var popup_40bd04875198d0151faa0ab8d546a237 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_807fbd611c9b7e5b17d773591ec90593 = $(`<div id="html_807fbd611c9b7e5b17d773591ec90593" style="width: 100.0%; height: 100.0%;">Vlucht 4 afstand: 1240.46 km, Azimut: 190.51 graden</div>`)[0];
+                popup_40bd04875198d0151faa0ab8d546a237.setContent(html_807fbd611c9b7e5b17d773591ec90593);
+            
+        
+
+        marker_54fadc2ee56501c5f6de4fe49fdd1b55.bindPopup(popup_40bd04875198d0151faa0ab8d546a237)
+        ;
+
+        
+    
+    
+            var marker_b2bee7287b767f22b91c10b2e843d9ff = L.marker(
+                [52.309937, 4.77451],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_dae8f058cf580d6928bcd3ceb68f9ba5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_b2bee7287b767f22b91c10b2e843d9ff.setIcon(icon_dae8f058cf580d6928bcd3ceb68f9ba5);
+        
+    
+        var popup_dcf54afcd6da641bb3d79c67e11bb35d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_db34a13c1b6c55b97fdeff85dcb2f47c = $(`<div id="html_db34a13c1b6c55b97fdeff85dcb2f47c" style="width: 100.0%; height: 100.0%;">Vlucht 5 Start</div>`)[0];
+                popup_dcf54afcd6da641bb3d79c67e11bb35d.setContent(html_db34a13c1b6c55b97fdeff85dcb2f47c);
+            
+        
+
+        marker_b2bee7287b767f22b91c10b2e843d9ff.bindPopup(popup_dcf54afcd6da641bb3d79c67e11bb35d)
+        ;
+
+        
+    
+    
+            var marker_169d67702c0dac8b894bc395bd572afd = L.marker(
+                [41.301025, 2.076405],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_7c9ea4dacf0497f31b5dccfbdf72f1b9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_169d67702c0dac8b894bc395bd572afd.setIcon(icon_7c9ea4dacf0497f31b5dccfbdf72f1b9);
+        
+    
+        var popup_7ec93cef351141007421a71014c7e990 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_16b75d4a9c28f896c6db511ba2f7a8f9 = $(`<div id="html_16b75d4a9c28f896c6db511ba2f7a8f9" style="width: 100.0%; height: 100.0%;">Vlucht 5 Eind</div>`)[0];
+                popup_7ec93cef351141007421a71014c7e990.setContent(html_16b75d4a9c28f896c6db511ba2f7a8f9);
+            
+        
+
+        marker_169d67702c0dac8b894bc395bd572afd.bindPopup(popup_7ec93cef351141007421a71014c7e990)
+        ;
+
+        
+    
+    
+            var poly_line_51aa6a003acb1262ef669b80241fb870 = L.polyline(
+                [[52.309937, 4.77451], [41.301025, 2.076405]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var marker_cff4c7d56096574c4975b237fb26a4f9 = L.marker(
+                [46.805481, 3.4254575000000003],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var div_icon_0f1f8419699fe4e14fc0d02bdf2e6895 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px;\u0027\u003eAfstand: 1241.01 km\u003c/div\u003e"});
+            marker_cff4c7d56096574c4975b237fb26a4f9.setIcon(div_icon_0f1f8419699fe4e14fc0d02bdf2e6895);
+        
+    
+        var popup_20504b8fa2c9d14ca40af4bd65442779 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1c109fb86dd26ebe54a845efe270be19 = $(`<div id="html_1c109fb86dd26ebe54a845efe270be19" style="width: 100.0%; height: 100.0%;">Vlucht 5 afstand: 1241.01 km, Azimut: 190.53 graden</div>`)[0];
+                popup_20504b8fa2c9d14ca40af4bd65442779.setContent(html_1c109fb86dd26ebe54a845efe270be19);
+            
+        
+
+        marker_cff4c7d56096574c4975b237fb26a4f9.bindPopup(popup_20504b8fa2c9d14ca40af4bd65442779)
+        ;
+
+        
+    
+    
+            var marker_6b1032b3dd8f100092cfc13011a59e17 = L.marker(
+                [52.321888, 4.725231],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_78827ba11dc02beed4e5a6fe2e0a7afa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_6b1032b3dd8f100092cfc13011a59e17.setIcon(icon_78827ba11dc02beed4e5a6fe2e0a7afa);
+        
+    
+        var popup_c153d4d0aef83559251350e6c7324e29 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_494696262886c5e8a060bf388d9bc702 = $(`<div id="html_494696262886c5e8a060bf388d9bc702" style="width: 100.0%; height: 100.0%;">Vlucht 6 Start</div>`)[0];
+                popup_c153d4d0aef83559251350e6c7324e29.setContent(html_494696262886c5e8a060bf388d9bc702);
+            
+        
+
+        marker_6b1032b3dd8f100092cfc13011a59e17.bindPopup(popup_c153d4d0aef83559251350e6c7324e29)
+        ;
+
+        
+    
+    
+            var marker_a8985f41129a4656673c113de2453c19 = L.marker(
+                [41.300938, 2.079773],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_de39a1e061fc0920afa9f45e7506b73c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_a8985f41129a4656673c113de2453c19.setIcon(icon_de39a1e061fc0920afa9f45e7506b73c);
+        
+    
+        var popup_7b3f845752404cc187d7c167452997ba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_82d6f06b9a49ceb7d82760de3019b514 = $(`<div id="html_82d6f06b9a49ceb7d82760de3019b514" style="width: 100.0%; height: 100.0%;">Vlucht 6 Eind</div>`)[0];
+                popup_7b3f845752404cc187d7c167452997ba.setContent(html_82d6f06b9a49ceb7d82760de3019b514);
+            
+        
+
+        marker_a8985f41129a4656673c113de2453c19.bindPopup(popup_7b3f845752404cc187d7c167452997ba)
+        ;
+
+        
+    
+    
+            var poly_line_b406f08a6bb151a9fb4860989bff6f70 = L.polyline(
+                [[52.321888, 4.725231], [41.300938, 2.079773]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var marker_5545fb560884767e0a01c2117cb3d56d = L.marker(
+                [46.811413, 3.402502],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var div_icon_625137e12a7fa43d8f2f6edc53dc293f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px;\u0027\u003eAfstand: 1241.68 km\u003c/div\u003e"});
+            marker_5545fb560884767e0a01c2117cb3d56d.setIcon(div_icon_625137e12a7fa43d8f2f6edc53dc293f);
+        
+    
+        var popup_28d7b98d238191b28f3b5d5cf7c8adc4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_28fdf17d88d504af9161396cfc6665ec = $(`<div id="html_28fdf17d88d504af9161396cfc6665ec" style="width: 100.0%; height: 100.0%;">Vlucht 6 afstand: 1241.68 km, Azimut: 190.31 graden</div>`)[0];
+                popup_28d7b98d238191b28f3b5d5cf7c8adc4.setContent(html_28fdf17d88d504af9161396cfc6665ec);
+            
+        
+
+        marker_5545fb560884767e0a01c2117cb3d56d.bindPopup(popup_28d7b98d238191b28f3b5d5cf7c8adc4)
+        ;
+
+        
+    
+    
+            var marker_2b2fb7f69e3e44f528219ed38c9aac6c = L.marker(
+                [52.308998, 4.772805],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_d01dbf4ccb4bd77eb6ec6300b4312df3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "cadetblue", "prefix": "glyphicon"}
+            );
+            marker_2b2fb7f69e3e44f528219ed38c9aac6c.setIcon(icon_d01dbf4ccb4bd77eb6ec6300b4312df3);
+        
+    
+        var popup_829fa3fd3f0200e9c6f667b84d36d8a3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b1cbc62fd28df4b8c51ed92b3fe1b3b = $(`<div id="html_7b1cbc62fd28df4b8c51ed92b3fe1b3b" style="width: 100.0%; height: 100.0%;">Vlucht 7 Start</div>`)[0];
+                popup_829fa3fd3f0200e9c6f667b84d36d8a3.setContent(html_7b1cbc62fd28df4b8c51ed92b3fe1b3b);
+            
+        
+
+        marker_2b2fb7f69e3e44f528219ed38c9aac6c.bindPopup(popup_829fa3fd3f0200e9c6f667b84d36d8a3)
+        ;
+
+        
+    
+    
+            var marker_3f83ec63d0d792b56c023d44397a2834 = L.marker(
+                [41.302113, 2.078518],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var icon_378865f5498b462039b42354f62cdaf8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "cadetblue", "prefix": "glyphicon"}
+            );
+            marker_3f83ec63d0d792b56c023d44397a2834.setIcon(icon_378865f5498b462039b42354f62cdaf8);
+        
+    
+        var popup_2bbee289437119dd233c09df95668dd6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_769394ce8ccfcaed5274ab8ef4868459 = $(`<div id="html_769394ce8ccfcaed5274ab8ef4868459" style="width: 100.0%; height: 100.0%;">Vlucht 7 Eind</div>`)[0];
+                popup_2bbee289437119dd233c09df95668dd6.setContent(html_769394ce8ccfcaed5274ab8ef4868459);
+            
+        
+
+        marker_3f83ec63d0d792b56c023d44397a2834.bindPopup(popup_2bbee289437119dd233c09df95668dd6)
+        ;
+
+        
+    
+    
+            var poly_line_2d0c96cebf0844e2beb070554016c5bc = L.polyline(
+                [[52.308998, 4.772805], [41.302113, 2.078518]],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var marker_5389f660d47be687afdf134f65186959 = L.marker(
+                [46.8055555, 3.4256615],
+                {}
+            ).addTo(map_c6fa5ef0750fa6919de0b72c492e99e2);
+        
+    
+            var div_icon_e14771ae862696fb09fffffcd6499267 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px;\u0027\u003eAfstand: 1240.74 km\u003c/div\u003e"});
+            marker_5389f660d47be687afdf134f65186959.setIcon(div_icon_e14771ae862696fb09fffffcd6499267);
+        
+    
+        var popup_7c0e21bf92fa38aa65333bf69034b037 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cde91bea54ec00de6c2f1e298f9d959c = $(`<div id="html_cde91bea54ec00de6c2f1e298f9d959c" style="width: 100.0%; height: 100.0%;">Vlucht 7 afstand: 1240.74 km, Azimut: 190.51 graden</div>`)[0];
+                popup_7c0e21bf92fa38aa65333bf69034b037.setContent(html_cde91bea54ec00de6c2f1e298f9d959c);
+            
+        
+
+        marker_5389f660d47be687afdf134f65186959.bindPopup(popup_7c0e21bf92fa38aa65333bf69034b037)
+        ;
+
+        
+    
+</script>
+</html>
