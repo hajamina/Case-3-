@@ -1,6 +1,6 @@
 pandas
 streamlit
-sklearn
+scikit-learn
 seaborn
 matplotlib
 folium
